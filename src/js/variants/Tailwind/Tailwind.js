@@ -1,0 +1,31 @@
+const config = {
+	colors: {
+		'gray-dark': '#343a40',
+		'gray-light': '#f4f5fb',
+		'gray-medium': '#6d7581',
+		'light-purple': '#371d4f',
+		'red-dark': '#dc4157',
+		blue: '#007bff',
+		cyan: '#39b8ff',
+		danger: '#ed485f',
+		dark: '#343a40',
+		gray: '#6d7581',
+		green: '#93c220',
+		indigo: '#6610f2',
+		info: '#39b8ff',
+		light: '#f4f5fb',
+		orange: '#fd7e14',
+		pink: '#e83e8c',
+		primary: '#28004d',
+		purple: '#28004d',
+		red: '#ed485f',
+		secondary: '#6d7581',
+		success: '#93c220',
+		teal: '#20c997',
+		warning: '#e9ad01',
+		white: '#fff',
+		yellow: '#e9ad01',
+	},
+};
+
+module.exports.config = config;

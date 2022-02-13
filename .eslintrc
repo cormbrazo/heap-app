@@ -1,0 +1,71 @@
+{
+	"env": {
+		"browser": true,
+		"es6": true
+	},
+	"extends": ["airbnb", "airbnb/hooks", "prettier"],
+	"parser": "babel-eslint",
+	"plugins": ["jest", "prettier"],
+	"rules": {
+		"import/extensions": ["error", "always", {
+      "js": "never",
+			"json": "ignorePackages"
+    }],
+		"import/no-extraneous-dependencies": 0,
+		"no-underscore-dangle": 0,
+		"prettier/prettier": ["error", {
+			"useTabs": true,
+			"trailingComma": "es5",
+			"tabWidth": 2,
+			"semi": true,
+			"singleQuote": true
+		}],
+		"react/jsx-filename-extension": [
+			1,
+			{
+				"extensions": [".js", ".jsx"]
+			}
+		],
+		"react/forbid-prop-types": [
+			2,
+			{
+				"forbid": ["array", "object"],
+				"checkContextTypes": true,
+				"checkChildContextTypes": true
+			}
+		],
+		"react/jsx-indent": [
+			2,
+			"tab",
+			{
+				"checkAttributes": true,
+				"indentLogicalExpressions": true
+			}
+		],
+		"react/jsx-indent-props": [2, "tab"],
+		"react/jsx-sort-default-props": [
+			2,
+			{
+				"ignoreCase": false
+			}
+		],
+		"react/sort-prop-types": [
+			2,
+			{
+				"callbacksLast": true,
+				"ignoreCase": false,
+				"requiredFirst": true,
+				"sortShapeProp": true,
+				"noSortAlphabetically": false
+			}
+		],
+		"react/jsx-one-expression-per-line": [0]
+	},
+	"settings": {
+		"import/resolver": {
+			"webpack": {
+				"config": "./webpack.config.js"
+			}
+		}
+	}
+}
