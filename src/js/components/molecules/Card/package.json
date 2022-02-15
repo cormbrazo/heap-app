@@ -1,6 +1,6 @@
 {
-	"name": "login",
+	"name": "card",
 	"version": "1.0.0",
 	"private": true,
-	"main": "./Login.js"
+	"main": "./Card.js"
 }

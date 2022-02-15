@@ -1,8 +1,7 @@
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { useNavigate } from 'react-router-dom';
-import { shallowEqual, useDispatch, useSelector } from 'react-redux';
-import { ACTIONS } from 'Actions/Global';
+import { shallowEqual, useSelector } from 'react-redux';
 import { Flex, Box } from 'reflexbox';
 import Button from 'Atoms/Button';
 import Logo from 'Atoms/Logo';
@@ -15,7 +14,6 @@ import content from './Home.content.json';
 
 export default function Home() {
 	const { name } = useSelector((state) => state, shallowEqual);
-	const dispatch = useDispatch();
 	const navigate = useNavigate();
 	const { features, hero } = content;
 	const featureIcons = [<FaMapPin />, <FaBrain />, <FaSkiing />];
@@ -42,11 +40,7 @@ export default function Home() {
 							className="inline-flex mr-4 mt-8"
 							icon={<FaChevronRight />}
 							onClick={() => {
-								dispatch({
-									type: ACTIONS.UPDATE_NAME,
-									payload: { name: 'Jameson' },
-								});
-								navigate('/login');
+								navigate('/kanban');
 							}}
 							text={hero.mainCTA}
 						/>

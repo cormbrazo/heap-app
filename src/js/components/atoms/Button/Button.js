@@ -8,18 +8,26 @@ export default function Button({
 	href,
 	icon,
 	onClick,
+	purple,
 	rel,
 	secondary,
 	target,
 	text,
 }) {
-	const type = secondary
-		? 'bg-gray-light hover:bg-gray-medium text-gray-dark hover:text-gray-light'
-		: 'bg-red hover:bg-red-dark text-white';
+	const type = () => {
+		switch (true) {
+			case secondary:
+				return 'bg-gray-light hover:bg-gray-medium text-gray-dark hover:text-gray-light';
+			case purple:
+				return 'bg-purple hover:bg-light-purple text-white hover:text-gray-light';
+			default:
+				return 'bg-red hover:bg-red-dark text-white';
+		}
+	};
 
 	return (
 		<a
-			className={`atom-button cursor-pointer flex font-bold h-12 items-center pl-6 pr-4 relative rounded-lg transition-colors w-48 ${className} ${type}`}
+			className={`atom-button cursor-pointer flex font-bold h-12 items-center pl-6 pr-4 relative rounded-lg transition-colors w-48 ${className} ${type()}`}
 			href={href}
 			onClick={(e) => {
 				if (onClick) {
@@ -43,6 +51,7 @@ Button.defaultProps = {
 	href: '#',
 	icon: null,
 	onClick: null,
+	purple: false,
 	rel: null,
 	secondary: false,
 	target: null,
@@ -55,6 +64,7 @@ Button.propTypes = {
 	href: PropTypes.string,
 	icon: PropTypes.element,
 	onClick: PropTypes.func,
+	purple: PropTypes.bool,
 	rel: PropTypes.string,
 	secondary: PropTypes.bool,
 	target: PropTypes.string,

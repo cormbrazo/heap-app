@@ -16,7 +16,7 @@ import 'CSS/theme.css';
 import content from './index.content.json';
 
 const Home = lazy(() => import('Routes/Home'));
-const Login = lazy(() => import('Routes/Login'));
+const Kanban = lazy(() => import('Routes/Kanban'));
 const { loader } = content;
 
 const providers = combineProviders();
@@ -36,7 +36,7 @@ const App = () => {
 			<Suspense fallback={<Loader fullScreen text={loader} />}>
 				<Routes>
 					<Route exact path="/" element={<Home />} />
-					<Route exact path="/login" element={<Login />} />
+					<Route exact path="/kanban" element={<Kanban />} />
 					<Route path="*" element={<Navigate replace to="/" />} />
 				</Routes>
 			</Suspense>

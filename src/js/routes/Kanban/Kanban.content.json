@@ -1,0 +1,23 @@
+{
+	"kanban": [
+		{
+			"headline": "To Do",
+			"actionType": "toDo"
+		},
+		{
+			"headline": "In Progress",
+			"actionType": "inProgress"
+		},
+		{
+			"headline": "Done",
+			"actionType": "done"
+		}
+	],
+	"defaultCard": {
+		"CTA": "Add card",
+		"finish": "Add to board"
+	},
+	"input": {
+		"placeholder": "Title for card"
+	}
+}
