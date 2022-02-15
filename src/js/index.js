@@ -3,7 +3,12 @@ import { combineProviders } from 'react-combine-providers';
 import { render } from 'react-dom';
 import { IconContext } from 'react-icons';
 import { Provider } from 'react-redux';
-import { HashRouter as Router, Route, Routes } from 'react-router-dom';
+import {
+	Navigate,
+	HashRouter as Router,
+	Route,
+	Routes,
+} from 'react-router-dom';
 import { createReduxStore } from './redux';
 import Loader from 'Atoms/Loader';
 import 'Node/reset-css/less/reset.less';
@@ -32,6 +37,7 @@ const App = () => {
 				<Routes>
 					<Route exact path="/" element={<Home />} />
 					<Route exact path="/login" element={<Login />} />
+					<Route path="*" element={<Navigate replace to="/" />} />
 				</Routes>
 			</Suspense>
 		</Router>
