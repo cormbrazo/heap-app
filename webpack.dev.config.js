@@ -45,6 +45,7 @@ module.exports = merge(common, {
 	plugins: [
 		new CompressionPlugin(),
 		new HtmlWebpackPlugin({
+			favicon: 'src/assets/images/favicons/favicon.ico',
 			filename: 'index.html',
 			template: 'src/html/index.html',
 		}),
