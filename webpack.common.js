@@ -63,8 +63,6 @@ module.exports = {
 			Molecules: path.resolve(__dirname, 'src/js/components/molecules'),
 			Node: path.resolve(__dirname, 'node_modules'),
 			Organisms: path.resolve(__dirname, 'src/js/components/organisms'),
-			Reducers: path.resolve(__dirname, 'src/js/reducers'),
-			Root: path.resolve(__dirname, './'),
 			Routes: path.resolve(__dirname, 'src/js/routes'),
 			Variants: path.resolve(__dirname, 'src/js/variants'),
 		},
