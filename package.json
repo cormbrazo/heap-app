@@ -1,11 +1,11 @@
 {
 	"name": "heap-app",
 	"version": "1.0.0",
-	"description": "",
+	"description": "For the Technical Interview: before your interview begins, we'd like for you to set up a project in your favorite editor that will allow you to build a client-side TypeScript or JavaScript web app with either React, Angular, or Vue. We'd like for you to dive right into the problem without spending a lot of time setting up your environment, so please install and configure your favorite libraries and any tooling that will allow you to be productive throughout the exercise. This web app will not be making web requests, but it will involve non-trivial state management. You'll also be free to use Google or a search engine of your choice throughout the exercise. Treat the project setup as if you were scaffolding your own personal web project. Babel plugins are allowed. CSS frameworks are allowed. Productivity-enhancing dev tooling is allowed. Editor extensions are allowed. Pre-written boilerplate code is allowed. In short, we want you to be at your best, so we recommend using any and all tools with which you feel the most comfortable and productive.",
 	"main": "index.js",
 	"scripts": {
 		"start": "npm run watch:css && webpack serve --config webpack.dev.config.js --open",
-		"build": "npm run watch:css && webpack --config webpack.prod.config.js",
+		"build": "npm run watch:css && node updateRouter HashRouter BrowserRouter && webpack --config webpack.prod.config.js && node updateRouter BrowserRouter HashRouter",
 		"watch:css": "postcss src/less/theme.less -o src/css/theme.css"
 	},
 	"keywords": [],
@@ -13,6 +13,7 @@
 	"license": "ISC",
 	"dependencies": {
 		"dotenv-webpack": "^7.1.0",
+		"flowbite": "^1.3.3",
 		"react": "^16.8.6",
 		"react-combine-providers": "^0.9.6",
 		"react-dom": "^16.8.6",
@@ -23,6 +24,7 @@
 		"redux": "^4.1.2",
 		"redux-thunk": "^2.4.1",
 		"reflexbox": "^4.0.6",
+		"replace-in-file": "^6.3.2",
 		"reset-css": "^5.0.1"
 	},
 	"devDependencies": {

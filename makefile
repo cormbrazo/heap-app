@@ -1,1 +1,2 @@
-deploy: ./deploy-ryspi
+deploy:
+	./deploy-ryspi

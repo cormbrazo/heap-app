@@ -3,6 +3,7 @@ const { config } = require('./src/js/variants/Tailwind');
 module.exports = {
 	content: ['./src/**/*.{html,js,jsx}'],
 	darkMode: 'media', // or 'class'
+	plugins: [],
 	presets: [],
 	theme: {
 		screens: {

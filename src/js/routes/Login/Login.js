@@ -20,4 +20,3 @@ export default function Login() {
 Login.defaultProps = {};
 
 Login.propTypes = {};
-// children: PropTypes.any

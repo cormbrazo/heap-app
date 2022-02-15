@@ -1,0 +1,22 @@
+{
+	"hero": {
+		"intro": "Welcome,",
+		"headline": "Are you ready to learn about Heap Illuminate?",
+		"mainCTA": "Yes, log in",
+		"secondaryCTA": "No, go back"
+	},
+	"features": [
+		{
+			"headline": "Pinpoint hidden friction points",
+			"paragraph": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+		},
+		{
+			"headline": "Avoid confirmation bias",
+			"paragraph": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+		},
+		{
+			"headline": "Get fast, definitive answers",
+			"paragraph": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+		}
+	]
+}

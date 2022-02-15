@@ -1,14 +1,18 @@
-import React from 'react';
+import React, { lazy, Suspense } from 'react';
 import { combineProviders } from 'react-combine-providers';
 import { render } from 'react-dom';
 import { IconContext } from 'react-icons';
 import { Provider } from 'react-redux';
 import { HashRouter as Router, Route, Routes } from 'react-router-dom';
 import { createReduxStore } from './redux';
-import Home from 'Routes/Home';
-import Login from 'Routes/Login';
+import Loader from 'Atoms/Loader';
 import 'Node/reset-css/less/reset.less';
 import 'CSS/theme.css';
+import content from './index.content.json';
+
+const Home = lazy(() => import('Routes/Home'));
+const Login = lazy(() => import('Routes/Login'));
+const { loader } = content;
 
 const providers = combineProviders();
 providers.push(Provider, { store: createReduxStore() });
@@ -24,10 +28,12 @@ const MasterProvider = providers.master();
 const App = () => {
 	return (
 		<Router>
-			<Routes>
-				<Route exact path="/" element={<Home />} />
-				<Route exact path="/login" element={<Login />} />
-			</Routes>
+			<Suspense fallback={<Loader fullScreen text={loader} />}>
+				<Routes>
+					<Route exact path="/" element={<Home />} />
+					<Route exact path="/login" element={<Login />} />
+				</Routes>
+			</Suspense>
 		</Router>
 	);
 };

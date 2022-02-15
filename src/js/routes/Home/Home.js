@@ -6,17 +6,19 @@ import { ACTIONS } from 'Actions/Global';
 import { Flex, Box } from 'reflexbox';
 import Button from 'Atoms/Button';
 import Logo from 'Atoms/Logo';
+import Footer from 'Organisms/Footer';
 import { FaChevronRight, FaMapPin, FaBrain, FaSkiing } from 'react-icons/fa';
 import Illuminate from 'Contextual/insights-hero@2x.png';
 import { container } from 'Variants/Grid';
 import { config } from 'Variants/Tailwind';
-// import content from './Home.json';
+import content from './Home.content.json';
 
 export default function Home() {
 	const { name } = useSelector((state) => state, shallowEqual);
 	const dispatch = useDispatch();
 	const navigate = useNavigate();
-	// const { headline } = content;
+	const { features, hero } = content;
+	const featureIcons = [<FaMapPin />, <FaBrain />, <FaSkiing />];
 
 	return (
 		<main>
@@ -32,12 +34,13 @@ export default function Home() {
 				>
 					<Box width={[1, 1 / 2]} px={3} Reflex>
 						<Logo />
-						<p className="font-bold mt-6 text-red">Welcome, {name}! </p>
-						<h1 className="mt-2">
-							Are you ready to learn about Heap Illuminate?
-						</h1>
+						<p className="font-bold mt-6 text-red">
+							{hero.intro} {name}!{' '}
+						</p>
+						<h1 className="mt-2">{hero.headline}</h1>
 						<Button
 							className="inline-flex mr-4 mt-8"
+							icon={<FaChevronRight />}
 							onClick={() => {
 								dispatch({
 									type: ACTIONS.UPDATE_NAME,
@@ -45,18 +48,14 @@ export default function Home() {
 								});
 								navigate('/login');
 							}}
-						>
-							<span className="mr-16">Yes, log in</span> <FaChevronRight />
-						</Button>
+							text={hero.mainCTA}
+						/>
 						<Button
-							className="inline-flex mt-8"
-							onClick={() =>
-								window.location.assign('https://heap.io/platform/illuminate')
-							}
+							className="inline-flex mt-4"
+							href="https://heap.io/platform/illuminate"
 							secondary
-						>
-							<span className="mr-16">No, go back</span>
-						</Button>
+							text={hero.secondaryCTA}
+						/>
 					</Box>
 					<Box width={[1, 1 / 2]} pt={[4, 0]} px={3} Reflex>
 						<img src={Illuminate} />
@@ -65,44 +64,27 @@ export default function Home() {
 			</section>
 			<section className="bg-gray-light">
 				<Flex flexWrap="wrap" justifyContent="center" py={4} {...container}>
-					<Box width={[1, 1 / 3]} px={3} py={4} textAlign="center" Reflex>
-						<FaMapPin
-							className="center-h"
-							color={config.colors.purple}
-							size={48}
-						/>
-						<h4 className="mt-4">Pinpoint hidden friction points</h4>
-						<p className="mt-2">
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-							eiusmod tempor incididunt ut labore et dolore magna aliqua.
-						</p>
-					</Box>
-					<Box width={[1, 1 / 3]} px={3} py={4} textAlign="center" Reflex>
-						<FaBrain
-							className="center-h"
-							color={config.colors.purple}
-							size={48}
-						/>
-						<h4 className="mt-4">Avoid confirmation bias</h4>
-						<p className="mt-2">
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-							eiusmod tempor incididunt ut labore et dolore magna aliqua.
-						</p>
-					</Box>
-					<Box width={[1, 1 / 3]} px={3} py={4} textAlign="center" Reflex>
-						<FaSkiing
-							className="center-h"
-							color={config.colors.purple}
-							size={48}
-						/>
-						<h4 className="mt-4">Get fast, definitive answers</h4>
-						<p className="mt-2">
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-							eiusmod tempor incididunt ut labore et dolore magna aliqua.
-						</p>
-					</Box>
+					{features.map((feature, index) => (
+						<Box
+							width={[1, 1 / 3]}
+							key={feature.headline}
+							px={3}
+							py={4}
+							textAlign="center"
+							Reflex
+						>
+							{React.cloneElement(featureIcons[index], {
+								className: 'mx-auto',
+								color: `${config.colors.purple}`,
+								size: 48,
+							})}
+							<h4 className="mt-4">{feature.headline}</h4>
+							<p className="mt-2">{feature.paragraph}</p>
+						</Box>
+					))}
 				</Flex>
 			</section>
+			<Footer />
 		</main>
 	);
 }
@@ -110,4 +92,3 @@ export default function Home() {
 Home.defaultProps = {};
 
 Home.propTypes = {};
-// children: PropTypes.any

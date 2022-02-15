@@ -385,6 +385,28 @@ Ensure the default browser behavior of the `hidden` attribute.
     max-width: 1536px;
   }
 }
+.absolute{
+  position: absolute;
+}
+.relative{
+  position: relative;
+}
+.inset-0{
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+}
+.right-4{
+  right: 1rem;
+}
+.z-50{
+  z-index: 50;
+}
+.mx-auto{
+  margin-left: auto;
+  margin-right: auto;
+}
 .mt-6{
   margin-top: 1.5rem;
 }
@@ -397,9 +419,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .mt-8{
   margin-top: 2rem;
 }
-.mr-16{
-  margin-right: 4rem;
-}
 .mt-4{
   margin-top: 1rem;
 }
@@ -409,23 +428,40 @@ Ensure the default browser behavior of the `hidden` attribute.
 .inline-flex{
   display: inline-flex;
 }
-.hidden{
-  display: none;
-}
 .h-12{
   height: 3rem;
 }
 .w-48{
   width: 12rem;
 }
+@-webkit-keyframes pulse{
+  50%{
+    opacity: .5;
+  }
+}
+@keyframes pulse{
+  50%{
+    opacity: .5;
+  }
+}
+.animate-pulse{
+  -webkit-animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+          animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
 .cursor-pointer{
   cursor: pointer;
+}
+.flex-col{
+  flex-direction: column;
 }
 .items-center{
   align-items: center;
 }
 .justify-center{
   justify-content: center;
+}
+.gap-2{
+  gap: 0.5rem;
 }
 .rounded-lg{
   border-radius: 0.5rem;
@@ -441,6 +477,27 @@ Ensure the default browser behavior of the `hidden` attribute.
 .bg-red{
   --tw-bg-opacity: 1;
   background-color: rgb(237 72 95 / var(--tw-bg-opacity));
+}
+.bg-white{
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+.py-6{
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+.pl-6{
+  padding-left: 1.5rem;
+}
+.pr-4{
+  padding-right: 1rem;
+}
+.text-center{
+  text-align: center;
+}
+.text-sm{
+  font-size: 0.875rem;
+  line-height: 1.25rem;
 }
 .font-bold{
   font-weight: 700;
@@ -566,18 +623,16 @@ h6{
   }
 }
 
-/* utilities */
-.center-h {
-	margin: 0 auto;
-}
 .hover\:bg-gray-medium:hover{
   --tw-bg-opacity: 1;
   background-color: rgb(109 117 129 / var(--tw-bg-opacity));
 }
+
 .hover\:bg-red-dark:hover{
   --tw-bg-opacity: 1;
   background-color: rgb(220 65 87 / var(--tw-bg-opacity));
 }
+
 .hover\:text-gray-light:hover{
   --tw-text-opacity: 1;
   color: rgb(244 245 251 / var(--tw-text-opacity));

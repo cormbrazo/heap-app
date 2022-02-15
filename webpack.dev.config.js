@@ -5,9 +5,8 @@ const path = require('path');
 const Dotenv = require('dotenv-webpack');
 const common = require('./webpack.common');
 
-// caching => we can use content hash to avoid caching by browsers
 module.exports = merge(common, {
-	mode: 'development', // adding this, the compiled file won't be minified by default
+	mode: 'development',
 	output: {
 		filename: 'index.js',
 		path: path.join(__dirname, 'dist'),
@@ -29,10 +28,10 @@ module.exports = merge(common, {
 						loader: 'style-loader',
 					},
 					{
-						loader: 'css-loader', // translates CSS into CommonJS
+						loader: 'css-loader',
 					},
 					{
-						loader: 'less-loader', // compiles Less to CSS
+						loader: 'less-loader',
 						options: {
 							lessOptions: {
 								javascriptEnabled: true,
