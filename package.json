@@ -6,6 +6,8 @@
 	"scripts": {
 		"start": "npm run watch:css && webpack serve --config webpack.dev.config.js --open",
 		"build": "npm run watch:css && node updateRouter HashRouter BrowserRouter && webpack --config webpack.prod.config.js && node updateRouter BrowserRouter HashRouter",
+		"kill": "kill -9",
+		"pid": "lsof -i :1013",
 		"watch:css": "postcss src/less/theme.less -o src/css/theme.css"
 	},
 	"keywords": [],
