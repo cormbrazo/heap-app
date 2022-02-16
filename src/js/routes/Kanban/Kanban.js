@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { memo, useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { FaPlus, FaMapPin } from 'react-icons/fa';
 import { useDispatch, useSelector } from 'react-redux';
@@ -57,7 +57,7 @@ export default function Kanban() {
 						},
 					})
 				}
-				key={card.title}
+				key={`${card.title}_${index}`}
 				title={card.title}
 			/>
 		);
@@ -77,6 +77,16 @@ export default function Kanban() {
 		}
 	};
 
+	const Header = memo(() => {
+		return (
+			<Flex justifyContent="center" pt={4} {...container}>
+				<Box>
+					<h1>Kanban Board</h1>
+				</Box>
+			</Flex>
+		);
+	});
+
 	useEffect(() => {
 		setActiveNewCardInfo('');
 		setInputVisible(-1);
@@ -84,11 +94,7 @@ export default function Kanban() {
 
 	return (
 		<main className="bg-gray-light">
-			<Flex justifyContent="center" pt={4} {...container}>
-				<Box>
-					<h1>Kanban Board</h1>
-				</Box>
-			</Flex>
+			<Header />
 			<Flex
 				alignItems="start"
 				className="h-max min-h-screen"
@@ -113,7 +119,7 @@ export default function Kanban() {
 							<div className="flex justify-end flex-wrap">
 								<input
 									autoFocus
-									className="border-2 border-purple h-12 mt-4 px-4 rounded-md w-full"
+									className="border-2 border-purple h-12 mt-6 px-4 rounded-md w-full"
 									onChange={(e) => {
 										const { value } = e.currentTarget;
 

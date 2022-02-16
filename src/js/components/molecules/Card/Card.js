@@ -17,7 +17,7 @@ export default function Card({
 }) {
 	return (
 		<div
-			className={`molecule-card bg-white border-2 border-purple border-solid mt-4 px-8 py-16 relative rounded-md ${className}`}
+			className={`molecule-card bg-white border-2 border-purple border-solid mt-6 px-8 py-16 relative rounded-md ${className}`}
 		>
 			<h4>{title}</h4>
 			<div className="molecule-card__arrows flex justify-center mt-4">
