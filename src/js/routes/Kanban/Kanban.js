@@ -137,6 +137,7 @@ export default function Kanban() {
 						)}
 						<Button
 							className="mt-6 mx-auto"
+							full
 							icon={<FaPlus />}
 							onClick={() => setInputVisible(index)}
 							text={defaultCard.CTA}

@@ -17,18 +17,18 @@ export default function Card({
 }) {
 	return (
 		<div
-			className={`molecule-card border-2 border-purple border-solid mt-4 p-16 relative rounded-md ${className}`}
+			className={`molecule-card bg-white border-2 border-purple border-solid mt-4 px-8 py-16 relative rounded-md ${className}`}
 		>
 			<h4>{title}</h4>
-			<div className="molecule-car__arrows flex justify-center mt-4">
+			<div className="molecule-card__arrows flex justify-center mt-4">
 				<FaChevronCircleLeft
-					className="mr-4 cursor-pointer"
+					className="mr-4 cursor-pointer rotate-90 sm:rotate-0"
 					color={config.colors.red}
 					onClick={prevClick}
 					size={24}
 				/>
 				<FaChevronCircleRight
-					className="cursor-pointer"
+					className="cursor-pointer rotate-90 sm:rotate-0"
 					color={config.colors.red}
 					onClick={nextClick}
 					size={24}

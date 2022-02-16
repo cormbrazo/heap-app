@@ -5,6 +5,7 @@ import './Button.less';
 export default function Button({
 	children,
 	className,
+	full,
 	href,
 	icon,
 	onClick,
@@ -24,10 +25,11 @@ export default function Button({
 				return 'bg-red hover:bg-red-dark text-white';
 		}
 	};
+	const width = full ? 'w-auto' : 'w-48';
 
 	return (
 		<a
-			className={`atom-button cursor-pointer flex font-bold h-12 items-center pl-6 pr-4 relative rounded-lg transition-colors w-48 ${className} ${type()}`}
+			className={`atom-button cursor-pointer flex font-bold h-12 items-center pl-6 pr-4 relative rounded-lg transition-colors ${className} ${type()} ${width}`}
 			href={href}
 			onClick={(e) => {
 				if (onClick) {
@@ -48,6 +50,7 @@ export default function Button({
 Button.defaultProps = {
 	children: '',
 	className: '',
+	full: false,
 	href: '#',
 	icon: null,
 	onClick: null,
@@ -61,6 +64,7 @@ Button.defaultProps = {
 Button.propTypes = {
 	children: PropTypes.any,
 	className: PropTypes.string,
+	full: PropTypes.bool,
 	href: PropTypes.string,
 	icon: PropTypes.element,
 	onClick: PropTypes.func,

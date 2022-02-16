@@ -445,8 +445,15 @@ Ensure the default browser behavior of the `hidden` attribute.
 .w-full{
   width: 100%;
 }
+.w-auto{
+  width: auto;
+}
 .w-48{
   width: 12rem;
+}
+.rotate-90{
+  --tw-rotate: 90deg;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 @-webkit-keyframes pulse{
   50%{
@@ -515,12 +522,17 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
-.p-16{
-  padding: 4rem;
-}
 .px-4{
   padding-left: 1rem;
   padding-right: 1rem;
+}
+.px-8{
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+.py-16{
+  padding-top: 4rem;
+  padding-bottom: 4rem;
 }
 .py-6{
   padding-top: 1.5rem;
@@ -688,4 +700,11 @@ h6{
 .hover\:text-gray-light:hover{
   --tw-text-opacity: 1;
   color: rgb(244 245 251 / var(--tw-text-opacity));
+}
+
+@media (min-width: 640px){
+  .sm\:rotate-0{
+    --tw-rotate: 0deg;
+    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  }
 }
