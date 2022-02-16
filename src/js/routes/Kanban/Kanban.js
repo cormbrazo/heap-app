@@ -112,6 +112,7 @@ export default function Kanban() {
 						{index === inputVisible && (
 							<div className="flex justify-end flex-wrap">
 								<input
+									autoFocus
 									className="border-2 border-purple h-12 mt-4 px-4 rounded-md w-full"
 									onChange={(e) => {
 										const { value } = e.currentTarget;
